@@ -1,16 +1,16 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>eu.debooy.maven</groupId>
   <artifactId>pom</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>pom</packaging>
   <name>DOOS Super POM</name>
   <organization>
     <name>Marco de Booij</name>
     <url>http://www.debooy.eu</url>
   </organization>
+  <inceptionYear>2010</inceptionYear>
   <licenses>
     <license>
       <name>European Union Public Licence (EUPL v.1.1)</name>
@@ -19,13 +19,20 @@
     </license>
   </licenses>
   <scm>
-    <connection>scm:svn:http://svn.debooy.eu/svn/projects/SuperPOM/trunk</connection>
-    <developerConnection>scm:svn:http://svn.debooy.eu/svn/projects/SuperPOM/trunk</developerConnection>
+    <connection>scm:svn:http://svn.debooy.eu/svn/projects/SuperPOM/tags/pom-1.0.0</connection>
+    <developerConnection>scm:svn:http://svn.debooy.eu/svn/projects/SuperPOM/tags/pom-1.0.0</developerConnection>
   </scm>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.6</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <distributionManagement>
     <repository>
@@ -62,7 +69,7 @@
                 <packageName>${pom.groupId}</packageName>
               </manifest>
               <manifestEntries>
-                <Build-Time>${buildNumber}</Build-Time>
+                <Build-Time>${maven.build.timestamp}</Build-Time>
                 <Implementation-Title>${pom.name}</Implementation-Title>
                 <Implementation-Vendor>${pom.organization.name}</Implementation-Vendor>
                 <Implementation-Vendor-Id>${pom.groupId}</Implementation-Vendor-Id>
@@ -94,7 +101,7 @@
                 <addClasspath>true</addClasspath>
               </manifest>
               <manifestEntries>
-                <Build-Time>${buildNumber}</Build-Time>
+                <Build-Time>${maven.build.timestamp}</Build-Time>
                 <Implementation-Title>${pom.name}</Implementation-Title>
                 <Implementation-Vendor>${pom.organization.name}</Implementation-Vendor>
                 <Implementation-Vendor-Id>${pom.groupId}</Implementation-Vendor-Id>
@@ -113,7 +120,7 @@
             <description>${pom.description}</description>
             <archive>
               <manifestEntries>
-                <Build-Time>${buildNumber}</Build-Time>
+                <Build-Time>${maven.build.timestamp}</Build-Time>
                 <Implementation-Title>${pom.name}</Implementation-Title>
                 <Implementation-Vendor>${pom.organization.name}</Implementation-Vendor>
                 <Implementation-Vendor-Id>${pom.groupId}</Implementation-Vendor-Id>
@@ -138,7 +145,7 @@
                 <classpathPrefix>lib/</classpathPrefix>
               </manifest>
               <manifestEntries>
-                <Build-Time>${buildNumber}</Build-Time>
+                <Build-Time>${maven.build.timestamp}</Build-Time>
                 <Implementation-Title>${pom.name}</Implementation-Title>
                 <Implementation-Vendor>${pom.organization.name}</Implementation-Vendor>
                 <Implementation-Vendor-Id>${pom.groupId}</Implementation-Vendor-Id>
@@ -160,7 +167,6 @@
         <configuration>
           <source>1.6</source>
           <target>1.6</target>
-          <!--  encoding>UTF-8</encoding -->
         </configuration>
       </plugin>
       <plugin>
@@ -176,9 +182,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
-        <!-- configuration>
-          <encoding>UTF-8</encoding>
-        </configuration -->
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -191,25 +194,6 @@
         <version>2.6</version>
         <configuration>
           <forkMode>pertest</forkMode>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>buildnumber-maven-plugin</artifactId>
-        <version>1.0-beta-3</version>
-        <executions>
-          <execution>
-            <phase>validate</phase>
-            <goals>
-              <goal>create</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <format>{0,date,yyyy-MM-dd HH:mm:ss}</format>
-          <items>
-            <item>timestamp</item>
-          </items>
         </configuration>
       </plugin>
     </plugins>
@@ -250,7 +234,6 @@
         <artifactId>maven-pmd-plugin</artifactId>
         <configuration>
           <linkXref>false</linkXref>
-          <!--  sourceEncoding>UTF-8</sourceEncoding -->
           <minimumTokens>100</minimumTokens>
           <targetJdk>1.6</targetJdk>
         </configuration>
@@ -258,12 +241,8 @@
     </plugins>
   </reporting>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.6</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+  <properties>
+  	<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 </project>
