@@ -3,7 +3,7 @@
 
   <groupId>eu.debooy.maven</groupId>
   <artifactId>pom</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>DOOS Super POM</name>
   <organization>
@@ -19,8 +19,8 @@
     </license>
   </licenses>
   <scm>
-    <connection>scm:svn:http://svn.debooy.eu/svn/SuperPOM/tags/pom-1.0.1</connection>
-    <developerConnection>scm:svn:http://svn.debooy.eu/svn/SuperPOM/tags/pom-1.0.1</developerConnection>
+    <connection>scm:svn:http://svn.debooy.eu/svn/SuperPOM/trunk</connection>
+    <developerConnection>scm:svn:http://svn.debooy.eu/svn/SuperPOM/trunk</developerConnection>
   </scm>
 
   <dependencyManagement>
