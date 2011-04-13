@@ -59,24 +59,24 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
           <configuration>
-            <displayName>${pom.name}</displayName>
-            <description>${pom.description}</description>
+            <displayName>${project.name}</displayName>
+            <description>${project.description}</description>
             <descriptorRefs>
               <descriptorRef>jar-with-dependencies</descriptorRef>
             </descriptorRefs>
              <archive>
               <manifest>
-                <packageName>${pom.groupId}</packageName>
+                <packageName>${project.groupId}</packageName>
               </manifest>
               <manifestEntries>
                 <Build-Time>${maven.build.timestamp}</Build-Time>
-                <Implementation-Title>${pom.name}</Implementation-Title>
-                <Implementation-Vendor>${pom.organization.name}</Implementation-Vendor>
-                <Implementation-Vendor-Id>${pom.groupId}</Implementation-Vendor-Id>
-                <Implementation-Version>${pom.version}</Implementation-Version>
-                <Specification-Title>${pom.name}</Specification-Title>
-                <Specification-Vendor>${pom.organization.name}</Specification-Vendor>
-                <Specification-Version>${pom.version}</Specification-Version>
+                <Implementation-Title>${project.name}</Implementation-Title>
+                <Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
+                <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+                <Implementation-Version>${project.version}</Implementation-Version>
+                <Specification-Title>${project.name}</Specification-Title>
+                <Specification-Vendor>${project.organization.name}</Specification-Vendor>
+                <Specification-Version>${project.version}</Specification-Version>
               </manifestEntries>
             </archive>
           </configuration>
@@ -92,6 +92,26 @@
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-ear-plugin</artifactId>
+          <configuration>
+            <archive>
+              <manifestEntries>
+                <Built-By>${settings.user.name}</Built-By>
+                <Build-Time>${maven.build.timestamp}</Build-Time>
+                <Implementation-Title>${project.name}</Implementation-Title>
+                <Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
+                <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+                <Implementation-Version>${project.version}</Implementation-Version>
+                <Specification-Title>${project.name}</Specification-Title>
+                <Specification-Vendor>${project.organization.name}</Specification-Vendor>
+                <Specification-Version>${project.version}</Specification-Version>
+                <Weblogic-Application-Version>${project.version}</Weblogic-Application-Version>
+              </manifestEntries>
+            </archive>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-ejb-plugin</artifactId>
           <version>2.1</version>
           <configuration>
@@ -101,14 +121,15 @@
                 <addClasspath>true</addClasspath>
               </manifest>
               <manifestEntries>
+                <Built-By>${settings.user.name}</Built-By>
                 <Build-Time>${maven.build.timestamp}</Build-Time>
-                <Implementation-Title>${pom.name}</Implementation-Title>
-                <Implementation-Vendor>${pom.organization.name}</Implementation-Vendor>
-                <Implementation-Vendor-Id>${pom.groupId}</Implementation-Vendor-Id>
-                <Implementation-Version>${pom.version}</Implementation-Version>
-                <Specification-Title>${pom.name}</Specification-Title>
-                <Specification-Vendor>${pom.organization.name}</Specification-Vendor>
-                <Specification-Version>${pom.version}</Specification-Version>
+                <Implementation-Title>${project.name}</Implementation-Title>
+                <Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
+                <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+                <Implementation-Version>${project.version}</Implementation-Version>
+                <Specification-Title>${project.name}</Specification-Title>
+                <Specification-Vendor>${project.organization.name}</Specification-Vendor>
+                <Specification-Version>${project.version}</Specification-Version>
               </manifestEntries>
             </archive>
           </configuration>
@@ -116,18 +137,19 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <configuration>
-            <displayName>${pom.name}</displayName>
-            <description>${pom.description}</description>
+            <displayName>${project.name}</displayName>
+            <description>${project.description}</description>
             <archive>
               <manifestEntries>
+                <Built-By>${settings.user.name}</Built-By>
                 <Build-Time>${maven.build.timestamp}</Build-Time>
-                <Implementation-Title>${pom.name}</Implementation-Title>
-                <Implementation-Vendor>${pom.organization.name}</Implementation-Vendor>
-                <Implementation-Vendor-Id>${pom.groupId}</Implementation-Vendor-Id>
-                <Implementation-Version>${pom.version}</Implementation-Version>
-                <Specification-Title>${pom.name}</Specification-Title>
-                <Specification-Vendor>${pom.organization.name}</Specification-Vendor>
-                <Specification-Version>${pom.version}</Specification-Version>
+                <Implementation-Title>${project.name}</Implementation-Title>
+                <Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
+                <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+                <Implementation-Version>${project.version}</Implementation-Version>
+                <Specification-Title>${project.name}</Specification-Title>
+                <Specification-Vendor>${project.organization.name}</Specification-Vendor>
+                <Specification-Version>${project.version}</Specification-Version>
               </manifestEntries>
             </archive>
           </configuration>
@@ -137,22 +159,23 @@
           <artifactId>maven-war-plugin</artifactId>
           <version>2.1-alpha-2</version>
           <configuration>
-            <displayName>${pom.name}</displayName>
-            <description>${pom.description}</description>
+            <displayName>${project.name}</displayName>
+            <description>${project.description}</description>
             <archive>
               <manifest>
                 <addClasspath>true</addClasspath>
                 <classpathPrefix>lib/</classpathPrefix>
               </manifest>
               <manifestEntries>
+                <Built-By>${settings.user.name}</Built-By>
                 <Build-Time>${maven.build.timestamp}</Build-Time>
-                <Implementation-Title>${pom.name}</Implementation-Title>
-                <Implementation-Vendor>${pom.organization.name}</Implementation-Vendor>
-                <Implementation-Vendor-Id>${pom.groupId}</Implementation-Vendor-Id>
-                <Implementation-Version>${pom.version}</Implementation-Version>
-                <Specification-Title>${pom.name}</Specification-Title>
-                <Specification-Vendor>${pom.organization.name}</Specification-Vendor>
-                <Specification-Version>${pom.version}</Specification-Version>
+                <Implementation-Title>${project.name}</Implementation-Title>
+                <Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
+                <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+                <Implementation-Version>${project.version}</Implementation-Version>
+                <Specification-Title>${project.name}</Specification-Title>
+                <Specification-Vendor>${project.organization.name}</Specification-Vendor>
+                <Specification-Version>${project.version}</Specification-Version>
               </manifestEntries>
             </archive>
           </configuration>
@@ -177,11 +200,12 @@
       <plugin>     
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
-        <version>2.0-beta-9</version>
+        <version>2.0</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
+        <version>2.4.3</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -203,11 +227,23 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <linkXref>false</linkXref>
+          <minimumTokens>100</minimumTokens>
+          <targetJdk>1.6</targetJdk>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.3.1</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>2.7.2</version>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -227,15 +263,6 @@
           <tags>
             <tag>TODO</tag>
           </tags>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-pmd-plugin</artifactId>
-        <configuration>
-          <linkXref>false</linkXref>
-          <minimumTokens>100</minimumTokens>
-          <targetJdk>1.6</targetJdk>
         </configuration>
       </plugin>
     </plugins>
