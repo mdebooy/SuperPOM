@@ -1,6 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>eu.debooy.maven</groupId>
   <artifactId>pom</artifactId>
   <version>1.0.3-SNAPSHOT</version>
@@ -58,6 +57,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.2-beta-5</version>
           <configuration>
             <displayName>${project.name}</displayName>
             <description>${project.description}</description>
@@ -67,16 +67,12 @@
              <archive>
               <manifest>
                 <packageName>${project.groupId}</packageName>
+                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries> 
               </manifest>
               <manifestEntries>
                 <Build-Time>${maven.build.timestamp}</Build-Time>
-                <Implementation-Title>${project.name}</Implementation-Title>
-                <Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
-                <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
-                <Implementation-Version>${project.version}</Implementation-Version>
-                <Specification-Title>${project.name}</Specification-Title>
-                <Specification-Vendor>${project.organization.name}</Specification-Vendor>
-                <Specification-Version>${project.version}</Specification-Version>
+                <Specification-Version>${project.info.majorVersion}.${project.info.minorVersion}</Specification-Version>
               </manifestEntries>
             </archive>
           </configuration>
@@ -93,19 +89,21 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-ear-plugin</artifactId>
+          <version>2.4.2</version>
           <configuration>
+            <displayName>${project.name}</displayName>
+            <description>${project.description}</description>
+            <defaultJavaBundleDir>lib/</defaultJavaBundleDir>
+            <defaultLibBundleDir>lib/</defaultLibBundleDir>
             <archive>
+              <manifest>
+                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+              </manifest>
               <manifestEntries>
                 <Built-By>${settings.user.name}</Built-By>
                 <Build-Time>${maven.build.timestamp}</Build-Time>
-                <Implementation-Title>${project.name}</Implementation-Title>
-                <Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
-                <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
-                <Implementation-Version>${project.version}</Implementation-Version>
-                <Specification-Title>${project.name}</Specification-Title>
-                <Specification-Vendor>${project.organization.name}</Specification-Vendor>
-                <Specification-Version>${project.version}</Specification-Version>
-                <Weblogic-Application-Version>${project.version}</Weblogic-Application-Version>
+                <Specification-Version>${project.info.majorVersion}.${project.info.minorVersion}</Specification-Version>
               </manifestEntries>
             </archive>
           </configuration>
@@ -113,43 +111,42 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-ejb-plugin</artifactId>
-          <version>2.1</version>
+          <version>2.3</version>
           <configuration>
-            <ejbVersion>3.0</ejbVersion>
+            <displayName>${project.name}</displayName>
+            <description>${project.description}</description>
+            <ejbVersion>3.1</ejbVersion>
             <archive>
               <manifest>
                 <addClasspath>true</addClasspath>
+                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries> 
+                <classpathPrefix>lib/</classpathPrefix>
               </manifest>
               <manifestEntries>
                 <Built-By>${settings.user.name}</Built-By>
                 <Build-Time>${maven.build.timestamp}</Build-Time>
-                <Implementation-Title>${project.name}</Implementation-Title>
-                <Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
-                <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
-                <Implementation-Version>${project.version}</Implementation-Version>
-                <Specification-Title>${project.name}</Specification-Title>
-                <Specification-Vendor>${project.organization.name}</Specification-Vendor>
-                <Specification-Version>${project.version}</Specification-Version>
+                <Specification-Version>${project.info.majorVersion}.${project.info.minorVersion}</Specification-Version>
               </manifestEntries>
             </archive>
           </configuration>
         </plugin>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
+          <version>2.3.1</version>
           <configuration>
             <displayName>${project.name}</displayName>
             <description>${project.description}</description>
             <archive>
+              <manifest>
+                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries> 
+              </manifest>
               <manifestEntries>
                 <Built-By>${settings.user.name}</Built-By>
                 <Build-Time>${maven.build.timestamp}</Build-Time>
-                <Implementation-Title>${project.name}</Implementation-Title>
-                <Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
-                <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
-                <Implementation-Version>${project.version}</Implementation-Version>
-                <Specification-Title>${project.name}</Specification-Title>
-                <Specification-Vendor>${project.organization.name}</Specification-Vendor>
-                <Specification-Version>${project.version}</Specification-Version>
+                <Specification-Version>${project.info.majorVersion}.${project.info.minorVersion}</Specification-Version>
               </manifestEntries>
             </archive>
           </configuration>
@@ -157,25 +154,19 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-war-plugin</artifactId>
-          <version>2.1-alpha-2</version>
+          <version>2.1.1</version>
           <configuration>
             <displayName>${project.name}</displayName>
             <description>${project.description}</description>
             <archive>
               <manifest>
-                <addClasspath>true</addClasspath>
-                <classpathPrefix>lib/</classpathPrefix>
+                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries> 
               </manifest>
               <manifestEntries>
                 <Built-By>${settings.user.name}</Built-By>
                 <Build-Time>${maven.build.timestamp}</Build-Time>
-                <Implementation-Title>${project.name}</Implementation-Title>
-                <Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
-                <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
-                <Implementation-Version>${project.version}</Implementation-Version>
-                <Specification-Title>${project.name}</Specification-Title>
-                <Specification-Vendor>${project.organization.name}</Specification-Vendor>
-                <Specification-Version>${project.version}</Specification-Version>
+                <Specification-Version>${project.info.majorVersion}.${project.info.minorVersion}</Specification-Version>
               </manifestEntries>
             </archive>
           </configuration>
@@ -187,6 +178,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
         <configuration>
           <source>1.6</source>
           <target>1.6</target>
@@ -200,7 +192,7 @@
       <plugin>     
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
-        <version>2.0</version>
+        <!--version>2.0</version-->
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -220,6 +212,24 @@
           <forkMode>pertest</forkMode>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <id>versions</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>maven-version</goal>
+              <goal>parse-version</goal>
+            </goals>
+            <configuration>
+              <propertyPrefix>project.info</propertyPrefix>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin> 
     </plugins>
   </build>
 
