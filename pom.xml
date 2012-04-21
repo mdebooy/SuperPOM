@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>eu.debooy.maven</groupId>
   <artifactId>pom</artifactId>
-  <version>1.0.3-SNAPSHOT</version>
+  <version>1.0.4</version>
   <packaging>pom</packaging>
   <name>DOOS Super POM</name>
   <organization>
@@ -13,13 +13,13 @@
   <licenses>
     <license>
       <name>European Union Public Licence (EUPL v.1.1)</name>
-      <url>http://ec.europa.eu/idabc/eupl</url>
+      <url>http://www.osor.eu/eupl</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
   <scm>
-    <connection>scm:svn:http://svn.debooy.eu/svn/SuperPOM/trunk</connection>
-    <developerConnection>scm:svn:http://svn.debooy.eu/svn/SuperPOM/trunk</developerConnection>
+    <connection>scm:svn:http://svn.debooy.eu/svn/SuperPOM/tags/pom-1.0.4</connection>
+    <developerConnection>scm:svn:http://svn.debooy.eu/svn/SuperPOM/tags/pom-1.0.4</developerConnection>
   </scm>
 
   <dependencyManagement>
