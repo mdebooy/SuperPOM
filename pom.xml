@@ -47,7 +47,7 @@
     <site>
       <id>Documentatie</id>
       <name>DOOS Documentatie</name>
-      <url>file://intra.debooy.eu/var/www/site/SuperPOM</url>
+      <url>ssh://intra.debooy.eu/var/www/site/SuperPOM</url>
     </site>
   </distributionManagement>
 
@@ -220,6 +220,11 @@
               <version>${openjpa.version}</version>
             </dependency>
           </dependencies>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.wagon</groupId>
+          <artifactId>wagon-ssh</artifactId>
+          <version>2.2</version>
         </plugin>
       </plugins>
     </pluginManagement>
