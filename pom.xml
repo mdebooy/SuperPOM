@@ -42,7 +42,7 @@
     <snapshotRepository>
       <id>DOOS</id>
       <name>DOOS snapshots</name>
-      <url>http://intra.debooy.eu/nexus/content/repositories/doos-snapshots</url>
+      <url>ssh://intra.debooy.eu/nexus/content/repositories/doos-snapshots</url>
     </snapshotRepository>
     <site>
       <id>Documentatie</id>
@@ -313,7 +313,7 @@
   </reporting>
 
   <properties>
-  	<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
-  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 </project>
