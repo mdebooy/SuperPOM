@@ -42,24 +42,16 @@
     <snapshotRepository>
       <id>DOOS</id>
       <name>DOOS snapshots</name>
-      <url>ssh://intra.debooy.eu/nexus/content/repositories/doos-snapshots</url>
+      <url>http://intra.debooy.eu/nexus/content/repositories/doos-snapshots</url>
     </snapshotRepository>
     <site>
       <id>Documentatie</id>
       <name>DOOS Documentatie</name>
-      <url>ssh://intra.debooy.eu/var/www/site/SuperPOM</url>
+      <url>scp://intra.debooy.eu/var/www/site/SuperPOM</url>
     </site>
   </distributionManagement>
 
   <build>
-    <extensions>
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-ssh</artifactId>
-        <version>2.5</version>
-      </extension>
-    </extensions>
-
     <pluginManagement>
       <plugins>
         <plugin>
@@ -163,6 +155,13 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
           <version>3.1</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.apache.maven.wagon</groupId>
+              <artifactId>wagon-ssh</artifactId>
+              <version>2.5</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
