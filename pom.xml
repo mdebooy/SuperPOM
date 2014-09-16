@@ -40,7 +40,7 @@
       <url>http://intra.debooy.eu/nexus/content/repositories/doos-releases</url>
     </repository>
     <snapshotRepository>
-      <id>DOOS</id>
+      <id>DOOS-snapshots</id>
       <name>DOOS snapshots</name>
       <url>http://intra.debooy.eu/nexus/content/repositories/doos-snapshots</url>
     </snapshotRepository>
@@ -204,7 +204,8 @@
         <plugin>
           <groupId>org.apache.openjpa</groupId>
           <artifactId>openjpa-maven-plugin</artifactId>
-          <version>2.2.2</version>
+          <version>2.3.0</version>
+          <!--version>2.4.0-nonfinal-1591689</version-->
           <configuration>
             <excludes>**/domain/*PK.class</excludes>
             <includes>**/domain/*.class</includes>
@@ -222,7 +223,7 @@
           </executions>
           <dependencies>
             <dependency>
-              <groupId>org.apache.openjpa</groupId>
+              <groupId>org.apache.openejb.patch</groupId>
               <artifactId>openjpa</artifactId>
               <version>${openjpa.version}</version>
             </dependency>
@@ -237,8 +238,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.0</version>
         <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
+          <source>1.7</source>
+          <target>1.7</target>
         </configuration>
       </plugin>
       <plugin>
