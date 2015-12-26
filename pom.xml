@@ -205,7 +205,7 @@
           <artifactId>openjpa-maven-plugin</artifactId>
           <version>${openjpa.version}</version>
           <configuration>
-            <excludes>**/domain/*PK.class</excludes>
+            <excludes>**/domain/*PK.class,**/domain/*Comparator.class</excludes>
             <includes>**/domain/*.class</includes>
             <addDefaultConstructor>true</addDefaultConstructor>               
             <enforcePropertyRestrictions>true</enforcePropertyRestrictions>
