@@ -47,12 +47,12 @@
     <repository>
       <id>DOOS</id>
       <name>DOOS releases</name>
-      <url>http://intra.debooy.eu/nexus/content/repositories/doos-releases</url>
+      <url>http://intra.debooy.eu/nexus/repository/doos-releases</url>
     </repository>
     <snapshotRepository>
       <id>DOOS-snapshots</id>
       <name>DOOS snapshots</name>
-      <url>http://intra.debooy.eu/nexus/content/repositories/doos-snapshots</url>
+      <url>http://intra.debooy.eu/nexus/repository/doos-snapshots</url>
     </snapshotRepository>
   </distributionManagement>
 
