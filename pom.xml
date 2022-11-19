@@ -38,7 +38,7 @@
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
-        <version>1.7.35</version>
+        <version>1.7.36</version>
       </dependency>
       <dependency>
         <groupId>org.apache.openjpa</groupId>
@@ -48,7 +48,7 @@
       <dependency>
         <groupId>org.postgresql</groupId>
         <artifactId>postgresql</artifactId>
-        <version>42.3.1</version>
+        <version>42.5.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -370,7 +370,7 @@
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <openjpa.version>3.1.0</openjpa.version>
+    <openjpa.version>3.2.2</openjpa.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 </project>
